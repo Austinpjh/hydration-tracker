@@ -1,0 +1,252 @@
+<CreateAccountWindow>:
+    name: "create"
+
+    namee: namee
+    email: email
+    password: passw
+    canvas:
+        Color:
+            rgba:81/255,232/255,241/255,0.7
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        cols:1
+
+        FloatLayout:
+            size: root.width, root.height/2
+
+            Label:
+                color: 0,0,0,1
+                text: "Create an Account"
+                bold: True
+                font_size: 70
+                pos_hint: {"center_x":0.5, "center_y":0.9}
+                size_hint: 0.5,0.2
+
+            Label:
+                color: 0,0,0,1
+                text: "Name: "
+                font_size: 40
+                pos_hint: {"center_x":0.25, "center_y":0.7}
+                size_hint: 0.3,0.2
+
+            TextInput:
+                id: namee
+                font_size: 40
+                multiline: False
+                pos_hint: {"center_x": 0.6, "center_y": 0.7}
+                size_hint: 0.5,0.1
+
+            Label:
+                color: 0,0,0,1
+                text: "Email: "
+                font_size: 40
+                pos_hint: {"center_x":0.25, "center_y":0.6}
+                size_hint: 0.3,0.2
+
+            TextInput:
+                id: email
+                font_size: 40
+                multiline: False
+                pos_hint: {"center_x": 0.6, "center_y":0.6}
+                size_hint: 0.5,0.1
+
+            Label:
+                text: "Password: "
+                color: 0,0,0,1
+                pos_hint: {"center_x": 0.2, "center_y":0.5}
+                size_hint: 0.3,0.2
+                font_size: 40
+
+            TextInput:
+                id: passw
+                pos_hint: {"center_x": 0.6, "center_y":0.5}
+                size_hint: 0.5,0.1
+                multiline: False
+                password: True
+                font_size: 40
+
+        Button:
+            background_color: 0,1,1,1
+            color: 0,0,0,1
+            pos_hint:{"center_x":0.5,"center_y":0.35}
+            size_hint: 0.4, 0.1
+            font_size: 20
+            text: "Already have an Account? Log In"
+            on_release:
+                root.login()
+
+        Button:
+            background_color: 0,1,1,1
+            color: 0,0,0,1
+            pos_hint:{"center_x": 0.5,"center_y": 0.15}
+            size_hint: 0.5,0.2
+            text: "Submit"
+            font_size: 40
+            on_release:
+                root.submit()
+
+
+<LoginWindow>:
+    name: "login"
+
+    email: email
+    password: password
+
+    canvas:
+        Color:
+            rgba: 81/255,232/255,241/255,0.7
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    FloatLayout:
+        Image:
+            source: "water_icon.png"
+            pos_hint:{"center_x":0.95, "center_y":0.55}
+        Image:
+            source: "water_icon.png"
+            pos_hint:{"center_x":0.3, "center_y":0.95}
+        Image:
+            source: "water_icon.png"
+            pos_hint:{"center_x":0.15, "center_y":0.2}
+
+        Label:
+            text:"Hydration Tracker"
+            bold: True
+            color: 0,0,0,1
+            font_size: 70
+            pos_hint: {"center_x":0.5, "center_y":0.8}
+            size_hint: 0.5,0.2
+
+        Label:
+            text:"Email: "
+            color: 0,0,0,1
+            font_size: 40
+            pos_hint: {"center_x":0.25, "center_y":0.7}
+            size_hint: 0.3,0.2
+
+        TextInput:
+            id: email
+            font_size: 40
+            multiline: False
+            pos_hint: {"center_x": 0.6, "center_y": 0.7}
+            size_hint: 0.5,0.1
+
+        Label:
+            text:"Password: "
+            color: 0,0,0,1
+            font_size: 40
+            pos_hint: {"center_x":0.2, "center_y":0.6}
+            size_hint: 0.3,0.2
+
+        TextInput:
+            id: password
+            font_size: 40
+            multiline: False
+            password: True
+            pos_hint: {"center_x": 0.6, "center_y":0.6}
+            size_hint: 0.5,0.1
+
+        Button:
+            background_color: 0,1,1,1
+            color: 0,0,0,1
+            pos_hint:{"center_x":0.5,"center_y":0.4}
+            size_hint: 0.4,0.1
+            font_size: 20
+            text: "Don't have an Account? Create One"
+            on_release:
+                root.createBtn()
+
+        Button:
+            background_color: 0,1,1,1
+            color: 0,0,0,1
+            pos_hint:{"center_x":0.5,"center_y":0.2}
+            size_hint: 0.5,0.2
+            font_size: 40
+            text: "Login"
+            on_release:
+                root.loginBtn()
+
+
+
+<MainWindow>:
+    n: n
+    email: email
+    date:date
+    intake: intake
+    input: input
+
+    canvas:
+        Color:
+            rgba: 81/255,232/255,241/255,0.7
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    FloatLayout:
+        Label:
+            color: 0,0,0,1
+            id: n
+            pos_hint:{"center_x": 0.5, "center_y": 0.9}
+            size_hint:0.8, 0.2
+            font_size: 50
+
+        Label:
+            color: 0,0,0,1
+            id: email
+            pos_hint:{"center_x": 0.5, "center_y": 0.8}
+            size_hint:0.8, 0.2
+            font_size: 50
+
+
+        Label:
+            color: 0,0,0,1
+            id: date
+            pos_hint:{"center_x": 0.5, "center_y": 0.7}
+            size_hint:0.8, 0.2
+            font_size: 50
+
+
+        Label:
+            color: 0,0,0,1
+            id:intake
+            pos_hint:{"center_x": 0.5, "center_y": 0.6}
+            size_hint:0.8, 0.2
+            font_size: 50
+
+
+        Label:
+            color: 0,0,0,1
+            #pos_hint:{"center_x": 0.3, "center_y": 0.4}
+            pos_hint:{"center_x": 0.2, "center_y": 0.4}
+            size_hint:0.2,0.1
+            font_size: 40
+            text: "Water Intake:\n      (ml) "
+
+        TextInput:
+            id:input
+            multiline: False
+            font_size: 40
+            pos_hint:{"center_x": 0.5, "center_y": 0.4}
+            size_hint:0.25,0.15
+
+        Button:
+            background_color: 0,1,1,1
+            color: 0,0,0,1
+            pos_hint:{"center_x": 0.8, "center_y": 0.4}
+            size_hint:0.25,0.1
+            text:"Enter"
+            font_size: 50
+            on_release:
+                root.water_update()
+
+        Button:
+            background_color: 0,1,1,1
+            color: 0,0,0,1
+            pos_hint:{"center_x":0.5, "center_y": 0.15}
+            size_hint: 0.5, 0.2
+            font_size: 50
+            text: "Log Out"
+            on_release:
+                root.logOut()
